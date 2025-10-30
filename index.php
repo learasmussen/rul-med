@@ -22,7 +22,7 @@ require "settings/init.php";
 </head>
 
 <body>
-
+<img src="images/headerimage.png" alt="headerimage">
 <h1>Frihed på hjul</h1>
 
 <p>Vi bevæger os forskelligt men vi fortjener alle adgang til de samme steder.
