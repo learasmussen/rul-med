@@ -24,6 +24,7 @@ require "settings/init.php";
 <body>
 <img src="images/headerimage.png" alt="headerimage" class="img-fluid">
 
+<!-- Hero -->
 <div class="text-center m-2">
     <h1 class="mb-3">Frihed på hjul</h1>
 
