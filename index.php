@@ -18,24 +18,26 @@ require "settings/init.php";
     
     <link href="css/styles.css" rel="stylesheet" type="text/css">
 
+    <link rel="icon" href="images/favicon.png">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
 
-<img src="images/headerimage.png" alt="headerimage" class="img-fluid">
 
 <!-- Hero -->
 <div class="text-center m-2">
-    <h1 class="mb-3 fw-bold">FRIHED PÅ HJUL</h1>
+    <img src="images/headerimage.png" alt="headerimage" class="rounded-bottom-circle" style="translate: -22.5%; margin-top: -50px;">
 
-<p>Vi bevæger os forskelligt men vi fortjener alle adgang til de samme steder.
-    <br>
-    <br>
-    Få overblik over tilgængelighed på steder omkring dig og hjælp andre med dine oplevelser.</p>
+    <h1 class="m-4">Frihed på hjul</h1>
 
-    <a href="places.php" class="btn btn-primary">UNDERSØG</a>
+    <p>
+        Vi bevæger os forskelligt men vi fortjener alle adgang til de samme steder.
+        <br> <br>
+        Få overblik over tilgængelighed på steder omkring dig og hjælp andre med dine oplevelser.
+    </p>
+    <a href="places.php" class="btn btn-primary rounded-4 text-white w-75">UNDERSØG</a>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
