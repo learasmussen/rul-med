@@ -39,6 +39,7 @@ require "settings/init.php";
     </p>
     <a href="places.php" class="btn btn-primary rounded-4 text-white w-75">UNDERSØG</a>
 
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
