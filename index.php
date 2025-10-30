@@ -30,7 +30,7 @@ require "settings/init.php";
 <div class="text-center m-2">
     <img src="images/headerimage.png" alt="headerimage" class="rounded-bottom-circle" style="translate: -22.5%; margin-top: -50px;">
 
-    <h1 class="m-4">Frihed på hjul</h1>
+    <h1 class="m-4 fw-bold">FRIHED PÅ HJUL</h1>
 
     <p>
         Vi bevæger os forskelligt men vi fortjener alle adgang til de samme steder.
