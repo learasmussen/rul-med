@@ -22,12 +22,15 @@ require "settings/init.php";
 </head>
 
 <body>
-<img src="images/headerimage.png" alt="headerimage">
-<h1>Frihed på hjul</h1>
+<img src="images/headerimage.png" alt="headerimage" class="img-fluid">
 
-<p>Vi bevæger os forskelligt men vi fortjener alle adgang til de samme steder.
+<div class="text-center m-2">
+    <h1 class="mb-3">Frihed på hjul</h1>
 
-    Få overblik over tilgængelighed på steder omkring dig og hjælp andre med dine oplevelser.</p>
+    <p>Vi bevæger os forskelligt men vi fortjener alle adgang til de samme steder.
+        <br> <br>
+        Få overblik over tilgængelighed på steder omkring dig og hjælp andre med dine oplevelser.</p>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
