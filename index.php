@@ -25,6 +25,10 @@ require "settings/init.php";
 
 <h1>Frihed på hjul</h1>
 
+<p>Vi bevæger os forskelligt men vi fortjener alle adgang til de samme steder.
+
+    Få overblik over tilgængelighed på steder omkring dig og hjælp andre med dine oplevelser.</p>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
