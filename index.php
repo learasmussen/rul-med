@@ -28,7 +28,7 @@ require "settings/init.php";
 
 <!-- Hero -->
 <div class="text-center m-2">
-    <img src="images/headerimage.png" alt="headerimage" class="rounded-bottom-circle" style="translate: -22.5%; margin-top: -50px;">
+    <img src="images/headerimage.png" alt="headerimage" class="rounded-bottom-circle" style="translate: -22.5%; margin-top: -75px;">
 
     <h1 class="m-4 fw-bold">FRIHED PÅ HJUL</h1>
 
@@ -40,6 +40,11 @@ require "settings/init.php";
     <a href="places.php" class="btn btn-primary rounded-4 text-white w-75">UNDERSØG</a>
 
 </div>
+
+<nav>
+
+</nav>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
