@@ -1,4 +1,4 @@
-<nav class="container-fluid bg-primary p-2 bottom-0 position-absolute">
+<nav class="container-fluid bg-primary p-2 bottom-0 position-fixed">
     <div class="row">
         <div class="col flex-center-column justify-content-around gap-2">
             <a href="index.php">
