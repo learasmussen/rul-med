@@ -40,6 +40,12 @@ body{
 	flex-direction: column;
 }
 
+.background-image-correct {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
 .location-text{
 	font-size: 12px;
 }
