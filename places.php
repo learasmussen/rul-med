@@ -13,13 +13,14 @@ require "settings/init.php";
 <head>
     <meta charset="utf-8">
 
-    <title>Steder</title>
+    <title>Rul Med | Steder</title>
 
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
     <meta name="copyright" content="Information om copyright">
 
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="images/favicon.png">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -44,11 +45,18 @@ require "settings/init.php";
                 $places = $db->sql("SELECT * FROM places ORDER BY placeName ASC");
                 foreach ($places as $place) {
             ?>
+                <a href="indiPlace.php?placeId=<?php echo $place->placeId?>" class="align-self-end">
                 <div class="col-12 card border-primary shadow rounded-4 p-0 overflow-hidden" style="height: 150px;">
                     <div class="card-body background-image-correct d-flex" style="background-image: url('images/<?php echo $place->placeImg . "Icon.png"; ?>')">
-                        <a href="indiPlace.php?placeId=<?php echo $place->placeId?>" class="align-self-end"><strong><?php echo "$place->placeAddress" . ", " . "$place->placePostal"?></strong></a>
+                        <div class="bg-white align-self-end rounded-3 p-1">
+                            <span class="text-primary rounded-2 fs-7"><strong><?php echo "$place->placeCity"?></strong></span>
+                            <br>
+                            <span class="text-primary rounded-2 fs-7"><strong><?php echo "$place->placeAddress" . ", " . "$place->placePostal"?></strong></span>
+
+                        </div>
                     </div>
                 </div>
+                </a>
             <?php
                 }
             ?>

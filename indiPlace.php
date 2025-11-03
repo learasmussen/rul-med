@@ -7,7 +7,7 @@
 require "settings/init.php";
 
 if(empty($_GET["placeId"])) {
-    header("Location:index.php");
+    header("Location:places.php");
 }
 
 $placeId = $_GET["placeId"];
@@ -31,21 +31,21 @@ function getIconColor($access, $property) {
     // Anything else (false, 0, etc.)
     return "DF1F11"; // red
 }
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="da">
 <head>
     <meta charset="utf-8">
 
-    <title>Steder</title>
+    <title>Rul Med | <?php echo $place->placeName?></title>
 
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
     <meta name="copyright" content="Information om copyright">
 
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="images/favicon.png">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -53,7 +53,7 @@ function getIconColor($access, $property) {
 <body class="position-relative pb-5">
 
     <div class="container mt-5 mb-5">
-        <!-- Place Adress & name -->
+        <!-- Place Address & name -->
         <div class="row ps-3">
             <h1 class="fw-bold m-0"><?php echo $place->placeName?></h1>
             <p class="text-black-50 m-0"><?php echo $place->placeCategory?></p>
@@ -76,10 +76,15 @@ function getIconColor($access, $property) {
                 <?php echo $place->placeDesc?>
             </p>
         </div>
-
+        <hr>
         <div class="row p-3">
-            <div class="col-12">
+            <div class="col-12 d-flex justify-content-between">
                 <h2>Tilgængelighed</h2>
+                <a href="indiPlaceAccess.php?placeId=<?php echo $place->placeId?>">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M8 1C8 0.446875 7.55312 0 7 0C6.44688 0 6 0.446875 6 1V6H1C0.446875 6 0 6.44688 0 7C0 7.55312 0.446875 8 1 8H6V13C6 13.5531 6.44688 14 7 14C7.55312 14 8 13.5531 8 13V8H13C13.5531 8 14 7.55312 14 7C14 6.44688 13.5531 6 13 6H8V1Z" fill="#999999"/>
+                    </svg>
+                </a>
             </div>
 
             <div class="col-12">
@@ -115,31 +120,36 @@ function getIconColor($access, $property) {
                           fill="#<?php echo $toiletColor; ?>" stroke="#<?php echo $toiletColor; ?>" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
 
+                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 35 35" fill="none">
+                    <?php $parkColor = getIconColor($access, 'hasCloseParking'); ?>
+                    <path d="M31.25 0H3.75C1.67969 0 0 1.67969 0 3.75V31.25C0 33.3203 1.67969 35 3.75 35H31.25C33.3203 35 35 33.3203 35 31.25V3.75C35 1.67969 33.3203 0 31.25 0ZM18.75 22.5H15V26.25C15 26.9375 14.4375 27.5 13.75 27.5H11.25C10.5625 27.5 10 26.9375 10 26.25V8.75C10 8.0625 10.5625 7.5 11.25 7.5H18.75C22.8828 7.5 26.25 10.8672 26.25 15C26.25 19.1328 22.8828 22.5 18.75 22.5ZM18.75 12.5H15V17.5H18.75C20.125 17.5 21.25 16.375 21.25 15C21.25 13.625 20.125 12.5 18.75 12.5Z"
+                          fill="#<?php echo $parkColor ?>"/>
+                </svg>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col d-flex">
+        <hr>
+        <div class="row p-3">
+            <div class="col d-flex gap-2">
                 <!-- Comments -->
                 <div class="d-flex">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                         <path d="M12 5.5C12 8.5375 9.31251 11 6.00001 11C5.16563 11 4.37188 10.8438 3.65001 10.5625L1.10001 11.9125C0.809383 12.0656 0.453133 12.0125 0.218757 11.7812C-0.0156175 11.55 -0.0687425 11.1906 0.0875075 10.9L1.20001 8.8C0.446883 7.88125 7.49482e-06 6.7375 7.49482e-06 5.5C7.49482e-06 2.4625 2.68751 0 6.00001 0C9.31251 0 12 2.4625 12 5.5ZM12 17C9.05938 17 6.61251 15.0594 6.10001 12.5C9.85001 12.4531 13.1094 9.78438 13.4688 6.16563C16.0719 6.76562 18 8.925 18 11.5C18 12.7375 17.5531 13.8813 16.8 14.8L17.9125 16.9C18.0656 17.1906 18.0125 17.5469 17.7813 17.7812C17.55 18.0156 17.1906 18.0688 16.9 17.9125L14.35 16.5625C13.6281 16.8438 12.8344 17 12 17Z" fill="#E77EB2"/>
                     </svg>
-                    <p id="randomComment"></p>
+                    <p id="randomComment" class="m-0 ms-1"></p>
                 </div>
                 <!-- Likes -->
                 <div class="d-flex">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
                         <path d="M8.28125 2.47187L8.75 3.11875L9.21875 2.47187C10 1.39062 11.2562 0.75 12.5906 0.75C14.8875 0.75 16.75 2.6125 16.75 4.90938V4.99062C16.75 8.49687 12.3781 12.5687 10.0969 14.3094C9.70938 14.6031 9.23438 14.75 8.75 14.75C8.26562 14.75 7.7875 14.6062 7.40312 14.3094C5.12187 12.5687 0.75 8.49687 0.75 4.99062V4.90938C0.75 2.6125 2.6125 0.75 4.90938 0.75C6.24375 0.75 7.5 1.39062 8.28125 2.47187Z" fill="#E77EB2" stroke="#E77EB2" stroke-width="1.5"/>
                     </svg>
-                    <p id="randomLike"></p>
+                    <p id="randomLike" class="m-0 ms-1"></p>
                 </div>
                 <!-- Rating -->
                 <div class="d-flex">
                     <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
                         <path d="M9.14728 1.61792L10.9434 7.14578H16.7557L12.0534 10.5622L13.8496 16.0901L9.14728 12.6736L4.445 16.0901L6.24111 10.5622L1.53883 7.14578H7.35117L9.14728 1.61792Z" fill="#F1CD58" stroke="#F1CD58"/>
                     </svg>
-                    <p><?php echo $place->placeRating?></p>
+                    <p class="m-0 ms-1"><?php echo $place->placeRating?></p>
                 </div>
             </div>
         </div>
@@ -152,15 +162,12 @@ function getIconColor($access, $property) {
     <?php include "includes/navFooter.php"?>
 
     <script>
-        console.log("din mor")
-
-
         document.addEventListener("DOMContentLoaded", function() {
             const randomComment = document.querySelector("#randomComment")
             const randomlike = document.querySelector("#randomLike")
 
-            let randomNumber1 = Math.floor(Math.random()*25)
-            let randomNumber2 = Math.floor(Math.random()*25)
+            let randomNumber1 = Math.floor(Math.random()*15)
+            let randomNumber2 = Math.floor(Math.random()*30)
 
             console.log(randomNumber1)
             console.log(randomNumber2)

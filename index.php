@@ -10,7 +10,7 @@ require "settings/init.php";
 <head>
     <meta charset="utf-8">
     
-    <title>Sigende titel</title>
+    <title>Rul Med | Forside</title>
     
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
@@ -41,7 +41,6 @@ require "settings/init.php";
     </div>
 
     <?php include "includes/navFooter.php"?>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
