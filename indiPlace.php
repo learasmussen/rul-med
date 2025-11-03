@@ -8,6 +8,7 @@ require "settings/init.php";
 
 if(empty($_GET["placeId"])) {
     header("Location:places.php");
+    exit();
 }
 
 $placeId = $_GET["placeId"];
@@ -38,7 +39,7 @@ function getIconColor($access, $property) {
 <head>
     <meta charset="utf-8">
 
-    <title>Rul Med | <?php echo $place->placeName?></title>
+    <title>Rul Med | <?= $place->placeName?></title>
 
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
