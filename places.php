@@ -29,7 +29,7 @@ require "settings/init.php";
     <!-- Places & Search -->
     <div class="container">
         <!-- Search -->
-        <div class="row mb-5 mt-5">
+        <div class="row mb-4 mt-5">
             <div class="col-12">
                 <h1 class="h2 border border-primary rounded-4 fw-semibold p-2 text-center">Nykøbing falster</h1>
             </div>
@@ -44,13 +44,9 @@ require "settings/init.php";
                 $places = $db->sql("SELECT * FROM places ORDER BY placeName ASC");
                 foreach ($places as $place) {
             ?>
-                <div class="col-12 card border-primary shadow rounded-4">
-                    <div class="card-body">
-                        <p class="fs-5 m-0"><?php echo "$place->placeName" ?></p>
-                        <p class="fs-6 m-0 text-black-50"><strong>LOKATION: </strong><?php echo "$place->placeAddress" . ", " . "$place->placePostal"?></p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="indiPlace.php?placeId=<?php echo $place->placeId?>">Læs mere</a>
+                <div class="col-12 card border-primary shadow rounded-4 p-0 overflow-hidden" style="height: 150px;">
+                    <div class="card-body background-image-correct d-flex" style="background-image: url('images/<?php echo $place->placeImg . "Icon.png"; ?>')">
+                        <a href="indiPlace.php?placeId=<?php echo $place->placeId?>" class="align-self-end"><strong><?php echo "$place->placeAddress" . ", " . "$place->placePostal"?></strong></a>
                     </div>
                 </div>
             <?php
@@ -60,7 +56,7 @@ require "settings/init.php";
     </div>
 
     <!-- Register Place -->
-    <footer class="container mt-5">
+    <footer class="container mt-3 mb-5 pb-5">
         <div class="row">
             <div class="col text-center flex-center-column">
                 <p>
@@ -73,5 +69,8 @@ require "settings/init.php";
             </div>
         </div>
     </footer>
+
+    <?php include "includes/navFooter.php"?>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
