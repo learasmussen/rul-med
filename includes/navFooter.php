@@ -42,7 +42,17 @@
         const currentPage = window.location.pathname.split("/").pop();
 
         links.forEach(link => link.classList.remove("active-link"));
-        const activeLink = [...links].find(link => link.getAttribute("data-page") === currentPage);
+        let activeLink = [...links].find(link => link.getAttribute("data-page") === currentPage);
+
+        console.log(activeLink)
+        console.log(currentPage)
+        if(!currentPage){
+            activeLink = links[0];
+        }
+
+        if (currentPage === "indiPlace.php") {
+            activeLink = links[1]
+        }
 
         if (activeLink) {
             const rect = activeLink.getBoundingClientRect();
