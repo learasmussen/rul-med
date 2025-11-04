@@ -44,8 +44,6 @@
         links.forEach(link => link.classList.remove("active-link"));
         let activeLink = [...links].find(link => link.getAttribute("data-page") === currentPage);
 
-        console.log(activeLink)
-        console.log(currentPage)
         if(!currentPage){
             activeLink = links[0];
         }
