@@ -34,15 +34,10 @@ function getIconColor($access, $property) {
 }
 
 $doorColor = getIconColor($access, 'hasStepAtEntrance');
-echo $doorColor . "-door ";
 $stairColor = getIconColor($access, 'hasRamp');
-echo $stairColor . "-stair ";
 $elevatorColor = getIconColor($access, 'hasElevator');
-echo $elevatorColor . "-elevator ";
 $toiletColor = getIconColor($access, 'hasAccessibleToilet');
-echo $toiletColor . "-toilet ";
 $parkColor = getIconColor($access, 'hasCloseParking');
-echo $parkColor. "-park ";
 ?>
 
 <!DOCTYPE html>
