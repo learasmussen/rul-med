@@ -27,7 +27,10 @@ require "settings/init.php";
 
     <!-- Hero -->
     <div class="text-center p-2 overflow-x-hidden">
-        <img src="images/headerimage.png" alt="headerimage" class="rounded-bottom-circle" style="translate: -22.5%; margin-top: -75px;">
+        <div class="d-flex justify-content-center position-relative">
+            <img src="images/headerImage.png" alt="headerimage" class="me-auto ms-auto rounded-bottom-circle opacity-50" style=" margin-top: -75px;">
+            <img src="images/favicon.png" alt="icon" class="img-fluid h-50 position-absolute top-50 translate-middle-y">
+        </div>
 
         <h1 class="m-4 fw-bold">FRIHED PÅ HJUL</h1>
 
