@@ -48,10 +48,10 @@ require "settings/init.php";
                 <a href="indiPlace.php?placeId=<?php echo $place->placeId?>" class="align-self-end">
                 <div class="col-12 card border-primary shadow rounded-4 p-0 overflow-hidden" style="height: 150px;">
                     <div class="card-body background-image-correct d-flex" style="background-image: url('images/<?php echo $place->placeImg . "Icon.png"; ?>')">
-                        <div class="bg-white align-self-end rounded-3 p-1">
-                            <span class="text-primary rounded-2 fs-7"><strong><?php echo "$place->placeCity"?></strong></span>
+                        <div class="d-flex flex-column justify-content-between">
+                            <span class="text-primary bg-white rounded-2 fs-7 p-1"><strong><?php echo "$place->placeAddress" . ", " . "$place->placePostal"?></strong></span>
                             <br>
-                            <span class="text-primary rounded-2 fs-7"><strong><?php echo "$place->placeAddress" . ", " . "$place->placePostal"?></strong></span>
+                            <span class="text-white text-center rounded-2 fs-6 bg-primary"><strong>Undersøg</strong></span>
 
                         </div>
                     </div>

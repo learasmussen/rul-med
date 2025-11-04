@@ -192,8 +192,8 @@ $access = !empty($access) ? $access[0] : null;
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary text-white">Save Changes</button>
-        <a href="indiPlace.php?placeId=<?= $placeId ?>" class="btn btn-secondary">Cancel</a>
+        <button type="submit" class="btn btn-primary text-white">Gem ændringer</button>
+        <a href="indiPlace.php?placeId=<?= $placeId ?>" class="btn btn-secondary">Annuller</a>
     </form>
 
 </div>
