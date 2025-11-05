@@ -39,7 +39,7 @@ require "settings/init.php";
             <br> <br>
             Få overblik over tilgængelighed på steder omkring dig og hjælp andre med dine oplevelser.
         </p>
-        <a href="places.php" class="btn btn-primary rounded-4 text-white w-75">UNDERSØG</a>
+        <a href="places.php" class="btn btn-primary rounded-4 text-white w-75 fw-bold">UNDERSØG</a>
 
     </div>
 

@@ -65,132 +65,85 @@ $access = !empty($access) ? $access[0] : null;
 </head>
 
 <body>
-<div class="container">
+<div class="container p-4">
 
-    <form action="indiPlaceAccess.php?placeId=<?= $placeId ?>" method="POST" class="p-4 bg-light rounded shadow-sm">
-        <h4 class="mb-4"><?= $place->placeName ?>'s tilgængelighed</h4>
+    <form action="indiPlaceAccess.php?placeId=<?= $placeId ?>" method="POST">
+        <div class="row">
+            <h4 class="mb-4"><?= $place->placeName ?>'s tilgængelighed</h4>
 
-        <input type="hidden" name="accessId" value="<?= $access->accessId ?>">
+            <input type="hidden" name="accessId" value="<?= $access->accessId ?>">
+        </div>
 
         <!-- Step at Entrance -->
-        <div class="mb-3">
+        <div class="row mb-3">
             <label class="form-label fw-bold">Har stedet et trin ved indgangen?</label>
             <div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio"
-                           name="data[hasStepAtEntrance]"
-                           id="stepYes"
-                           value="0"
-                        <?= isset($access) && $access->hasStepAtEntrance == 0 ? 'checked' : '' ?>>
-                    <label class="form-check-label" for="stepYes">Ja</label>
-                </div>
+                <input type="radio" class="btn-check" name="data[hasStepAtEntrance]" id="stepYes"
+                       value="0" <?= isset($access) && $access->hasStepAtEntrance == 0 ? 'checked' : '' ?>>
+                <label class="btn btn-outline-primary pe-4 ps-4" for="stepYes">Ja</label>
 
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio"
-                           name="data[hasStepAtEntrance]"
-                           id="stepNo"
-                           value="1"
-                        <?= isset($access) && $access->hasStepAtEntrance == 1 ? 'checked' : '' ?>>
-                    <label class="form-check-label" for="stepNo">Nej</label>
-                </div>
+                <input type="radio" class="btn-check" name="data[hasStepAtEntrance]" id="stepNo"
+                       value="1" <?= isset($access) && $access->hasStepAtEntrance == 1 ? 'checked' : '' ?>>
+                <label class="btn btn-outline-primary pe-4 ps-4" for="stepNo">Nej</label>
             </div>
         </div>
 
         <!-- Has Ramp -->
-        <div class="mb-3">
+        <div class="row mb-3">
             <label class="form-label fw-bold">Har stedet en rampe?</label>
             <div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio"
-                           name="data[hasRamp]"
-                           id="stepYes"
-                           value="0"
-                        <?= isset($access) && $access->hasRamp == 0 ? 'checked' : '' ?>>
-                    <label class="form-check-label" for="rampYes">Ja</label>
-                </div>
+                <input type="radio" class="btn-check" name="data[hasRamp]" id="rampYes"
+                       value="0" <?= isset($access) && $access->hasRamp == 0 ? 'checked' : '' ?>>
+                <label class="btn btn-outline-primary pe-4 ps-4" for="rampYes">Ja</label>
 
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio"
-                           name="data[hasRamp]"
-                           id="stepNo"
-                           value="1"
-                        <?= isset($access) && $access->hasRamp == 1 ? 'checked' : '' ?>>
-                    <label class="form-check-label" for="rampNo">Nej</label>
-                </div>
+                <input type="radio" class="btn-check" name="data[hasRamp]" id="rampNo"
+                       value="1" <?= isset($access) && $access->hasRamp == 1 ? 'checked' : '' ?>>
+                <label class="btn btn-outline-primary pe-4 ps-4" for="rampNo">Nej</label>
             </div>
         </div>
 
         <!-- Has Elevator -->
-        <div class="mb-3">
-            <label class="form-label fw-bold">Har stedet en Elevator?</label>
+        <div class="row mb-3">
+            <label class="form-label fw-bold">Har stedet en elevator?</label>
             <div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio"
-                           name="data[hasElevator]"
-                           id="stepYes"
-                           value="0"
-                        <?= isset($access) && $access->hasElevator == 0 ? 'checked' : '' ?>>
-                    <label class="form-check-label" for="eleYes">Ja</label>
-                </div>
+                <input type="radio" class="btn-check" name="data[hasElevator]" id="eleYes"
+                       value="0" <?= isset($access) && $access->hasElevator == 0 ? 'checked' : '' ?>>
+                <label class="btn btn-outline-primary pe-4 ps-4" for="eleYes">Ja</label>
 
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio"
-                           name="data[hasElevator]"
-                           id="stepNo"
-                           value="1"
-                        <?= isset($access) && $access->hasElevator == 1 ? 'checked' : '' ?>>
-                    <label class="form-check-label" for="eleNo">Nej</label>
-                </div>
+                <input type="radio" class="btn-check" name="data[hasElevator]" id="eleNo"
+                       value="1" <?= isset($access) && $access->hasElevator == 1 ? 'checked' : '' ?>>
+                <label class="btn btn-outline-primary pe-4 ps-4" for="eleNo">Nej</label>
             </div>
         </div>
 
         <!-- Has Close Parking -->
-        <div class="mb-3">
+        <div class="row mb-3">
             <label class="form-label fw-bold">Er der tæt handicap parkering ved stedet?</label>
-            <div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio"
-                           name="data[hasCloseParking]"
-                           id="stepYes"
-                           value="0"
-                        <?= isset($access) && $access->hasCloseParking == 0 ? 'checked' : '' ?>>
-                    <label class="form-check-label" for="parkYes">Ja</label>
-                </div>
+            <div class="gap-5">
+                <input type="radio" class="btn-check" name="data[hasCloseParking]" id="parkYes"
+                       value="0" <?= isset($access) && $access->hasCloseParking == 0 ? 'checked' : '' ?>>
+                <label class="btn btn-outline-primary pe-4 ps-4" for="parkYes">Ja</label>
 
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio"
-                           name="data[hasCloseParking]"
-                           id="stepNo"
-                           value="1"
-                        <?= isset($access) && $access->hasCloseParking == 1 ? 'checked' : '' ?>>
-                    <label class="form-check-label" for="parkNo">Nej</label>
-                </div>
+                <input type="radio" class="btn-check" name="data[hasCloseParking]" id="parkNo"
+                       value="1" <?= isset($access) && $access->hasCloseParking == 1 ? 'checked' : '' ?>>
+                <label class="btn btn-outline-primary pe-4 ps-4" for="parkNo">Nej</label>
             </div>
         </div>
 
         <!-- Has Accessible Toilet -->
-        <div class="mb-3">
+        <div class="row mb-3">
             <label class="form-label fw-bold">Har stedet et tilgængeligt toilet?</label>
             <div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio"
-                           name="data[hasAccessibleToilet]"
-                           id="stepYes"
-                           value="0"
-                        <?= isset($access) && $access->hasAccessibleToilet == 0 ? 'checked' : '' ?>>
-                    <label class="form-check-label" for="toiletYes">Ja</label>
-                </div>
+                <input type="radio" class="btn-check" name="data[hasAccessibleToilet]" id="toiletYes"
+                       value="0" <?= isset($access) && $access->hasAccessibleToilet == 0 ? 'checked' : '' ?>>
+                <label class="btn btn-outline-primary pe-4 ps-4" for="toiletYes">Ja</label>
 
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio"
-                           name="data[hasAccessibleToilet]"
-                           id="stepNo"
-                           value="1"
-                        <?= isset($access) && $access->hasAccessibleToilet == 1 ? 'checked' : '' ?>>
-                    <label class="form-check-label" for="toiletNo">Nej</label>
-                </div>
+                <input type="radio" class="btn-check" name="data[hasAccessibleToilet]" id="toiletNo"
+                       value="1" <?= isset($access) && $access->hasAccessibleToilet == 1 ? 'checked' : '' ?>>
+                <label class="btn btn-outline-primary pe-4 ps-4" for="toiletNo">Nej</label>
             </div>
         </div>
+
 
         <button type="submit" class="btn btn-primary text-white">Gem ændringer</button>
         <a href="indiPlace.php?placeId=<?= $placeId ?>" class="btn btn-secondary">Annuller</a>

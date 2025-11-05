@@ -32,7 +32,7 @@ require "settings/init.php";
         <!-- Search -->
         <div class="row mb-4 mt-5">
             <div class="col-12">
-                <h1 class="h2 border border-primary rounded-4 fw-semibold p-2 text-center">Nykøbing falster</h1>
+                <h1 class="h2 border border-primary rounded-4 fw-semibold p-2 text-center">Nykøbing Falster</h1>
             </div>
             <div class="col-12">
                 <label for="searchQuery" class="form-label"></label>
@@ -48,11 +48,9 @@ require "settings/init.php";
                 <a href="indiPlace.php?placeId=<?php echo $place->placeId?>" class="align-self-end">
                 <div class="col-12 card border-primary shadow rounded-4 p-0 overflow-hidden" style="height: 150px;">
                     <div class="card-body background-image-correct d-flex" style="background-image: url('images/<?php echo $place->placeImg . "Icon.png"; ?>')">
-                        <div class="d-flex flex-column justify-content-between">
-                            <span class="text-primary bg-white rounded-2 fs-7 p-1"><strong><?php echo "$place->placeAddress" . ", " . "$place->placePostal"?></strong></span>
-                            <br>
-                            <span class="text-white text-center rounded-2 fs-6 bg-primary"><strong>Undersøg</strong></span>
-
+                        <div class="position-relative">
+                            <span class="text-primary position-absolute top-0 bg-white text-nowrap p-1 pe-3 ps-3 rounded-4"><?php echo "$place->placeAddress" . ", " . "$place->placePostal"?></span>
+                            <span class="text-white position-absolute bottom-0 bg-primary text-nowrap p-1 pe-3 ps-3 rounded-4 fw-bold">Undersøg</span>
                         </div>
                     </div>
                 </div>
@@ -72,7 +70,7 @@ require "settings/init.php";
                     <br>
                     Så tilføj det her
                 </p>
-                <a href="registerPlaces.php" class="btn btn-primary rounded-4 text-white w-75">TILFØJ</a>
+                <a href="registerPlaces.php" class="btn btn-primary rounded-4 text-white w-75 fw-bold">TILFØJ</a>
 
             </div>
         </div>
